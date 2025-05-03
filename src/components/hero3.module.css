@@ -1,0 +1,103 @@
+.hero-link {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.25rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: var(--color-violet); /* Using project color variable */
+    border-radius: 5px;
+  }
+
+
+/* Effect 6 - Border scale */
+.effect6 {
+    composes: hero-link;
+  }
+  
+  .effect6::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+  
+  .effect6:hover::before {
+    transform: scale(1.1);
+    border-color: #ffd700;
+  }
+  
+  .effect6:hover {
+    position: relative;
+    overflow: visible;
+    transition: all 0.05s ease; /* Reduced from 0.2s to 0.05s */
+  }
+  
+  .effect6 .glowText {
+    position: relative;
+    display: inline-block;
+    transition: all 0.05s ease; /* Reduced from 0.2s to 0.05s */
+  }
+  
+  .effect6::before,
+  .effect6::after {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 100%;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    transition: all 0.05s ease; /* Reduced from 0.5s to 0.05s */
+  }
+  
+  .effect6:hover::before {
+    transform: scale(1.1) rotate(3deg);
+    border-color: #ffd700;
+    filter: drop-shadow(0 0 10px #ffd700);
+  }
+  
+  .effect6:hover::after {
+    transform: scale(1.2) rotate(-3deg);
+    border-color: rgba(255, 215, 0, 0.5);
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));
+  }
+  
+  .effect6 .particles {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1px;
+    height: 1px;
+  }
+  
+  .effect6:hover .particles::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+      circle,
+      rgba(255, 215, 0, 0.8) 0%,
+      transparent 70%
+    );
+    animation: particleExplosion 1s ease-out forwards;
+  }
+  
+  @keyframes particleExplosion {
+    0% {
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(4);
+      opacity: 0;
+    }
+  } 
