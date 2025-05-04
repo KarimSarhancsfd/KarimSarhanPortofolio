@@ -1,0 +1,29 @@
+.marqueeContainer {
+  animation: marquee 20s linear infinite;
+  display: flex;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.testimonialCard {
+  min-width: 400px;
+  margin-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.testimonialCard p {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #000000;
+}
+
+.testimonialCard img {
+  width: 50%
+}
