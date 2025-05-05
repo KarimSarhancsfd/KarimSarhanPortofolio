@@ -2,12 +2,15 @@ import projectimg1 from "../assets/im1.png";
 import projectimg2 from "../assets/im2.png";
 import projectimg3 from "../assets/im3.png";
 import projectimg4 from "../assets/im4.png";
+import styles from './project.module.css';
 
 export default function Project() {
   return (
     <div className="bg-indigo-800 m-20 max-w-full">
       <div className="grid justify-items-center m-10">
-        <h1 className="ttext-3xl text-white mt-10">Projects</h1>
+        <h1 className={`${styles.cyberpunk} ${styles.glitched} text-3xl text-[#f9f002] mt-10`}>
+          PROJECTS_
+        </h1>
       </div>
 
       <div className="grid grid-cols-2 gap-4 p-5">
