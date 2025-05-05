@@ -92,4 +92,84 @@
   }
 }
 
+/* Enhanced Glitch Text Effect */
+.glitchText {
+  position: relative;
+  color: #00ffaa;
+  text-shadow: 
+    0 0 10px #00ffaa, 
+    0 0 20px rgba(0, 255, 170, 0.5);
+  animation: titlePulse 4s infinite alternate;
+}
+
+.glitchText::before,
+.glitchText::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.glitchText::before {
+  left: 2px;
+  text-shadow: -2px 0 #ff00de;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  animation: textGlitch 3s infinite linear alternate-reverse;
+}
+
+.glitchText::after {
+  left: -2px;
+  text-shadow: 2px 0 #00ffaa;
+  clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+  animation: textGlitch 3s infinite linear alternate-reverse;
+  animation-delay: 0.05s;
+}
+
+/* Enhanced CRT Text Effect */
+/* Complete CRT Effect */
+.crtEffect {
+  position: relative;
+}
+
+.crtEffect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 50%, transparent 50%),
+    linear-gradient(90deg, rgba(255, 0, 0, 0.02) 50%, transparent 50%),
+    linear-gradient(90deg, transparent 50%, rgba(0, 0, 255, 0.02) 50%),
+    linear-gradient(transparent 50%, rgba(0, 255, 0, 0.02) 50%);
+  background-size: 100% 2px, 3px 100%, 3px 100%, 100% 3px;
+  pointer-events: none;
+  animation: crtScan 4s linear infinite;
+  z-index: -1;
+}
+
+@keyframes crtScan {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100%; }
+}
+
+@keyframes titlePulse {
+  0% { text-shadow: 0 0 10px #00ffaa, 0 0 20px rgba(0, 255, 170, 0.5); }
+  50% { text-shadow: 0 0 15px #00ffaa, 0 0 30px rgba(0, 255, 170, 0.7); }
+  100% { text-shadow: 0 0 10px #00ffaa, 0 0 20px rgba(0, 255, 170, 0.5); }
+}
+
+@keyframes textGlitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
 

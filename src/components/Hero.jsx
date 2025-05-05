@@ -6,25 +6,36 @@ import styles from './hero2.module.css';
 const Hero = () => {
   return (
     <section className="flex flex-col lg:flex-row justify-between items-center h-screen px-10 lg:px-20 bg-gradient-to-r from-violet to-violet2 text-white">
-      <div className="lg:w-1/3 sm:w-fit">
-        <p className="text-4xl mb-5 text-slate-300">I'm</p>
-        <h1 className="text-6xl">KIM</h1>
-        <hr className="mr-10" />
-        <p className="mt-5 mr-10 text-xs text-slate-150  font-sans">
-          I’m Karim Sarhan—a recent computer science graduate and passionate
-          Full Stack Web Developer. I specialize in building responsive,
-          user-centric web applications using React and Vite on the frontend,
-          with Node.js powering the backend. My designs are styled with Tailwind
-          CSS and handcrafted CSS to ensure pixel-perfect layouts and smooth UX
-          on every device. During my studies, I collaborated on several team
-          projects—implementing RESTful APIs, optimizing database schemas, and
-          integrating third-party services. I thrive on solving complex
-          problems, whether it’s reducing load times, architecting scalable
-          services, or writing clean, maintainable code. I’m eager to leverage
-          my solid foundation in data structures and algorithms, strong
-          communication skills, and continuous-learning mindset to bring your
-          ideas to life and to grow alongside a forward-thinking team. Let’s
-          build something great together!
+      <div className="lg:w-1/3 sm:w-fit relative">
+        {/* Glitch background effects */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute inset-0 bg-[url('https://i.ibb.co/RpXVy0nP/Leaf-Sketch-Exemplars-1.jpg')] bg-cover mix-blend-mode-overlay opacity-75 rounded-xl"></div>
+          <div className="absolute inset-0 bg-[url('https://i.ibb.co/9kd2NJRz/Grain-Texture-07-1024x1024-q22.jpg')] bg-cover mix-blend-mode-screen opacity-65"></div>
+          <div className="absolute inset-0 bg-[length:20px_20px] bg-[linear-gradient(to_right,rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.1)_1px,transparent_1px)]"></div>
+        </div>
+        
+        <p className="text-4xl mb-5 text-slate-300 font-['Share_Tech_Mono']">I'm</p>
+        <h1 className={`${styles.glitchText} text-6xl font-['Orbitron'] font-bold`} data-text="KIM">
+          KIM
+        </h1>
+        <hr className="mr-10 border-t-2 border-white/20" />
+        <p className="mt-5 mr-10 text-xs text-slate-300 font-['Share_Tech_Mono'] relative bg-black/5 p-4 rounded-lg backdrop-blur-sm">
+          <span className={`${styles.crtEffect} relative z-10`}>
+            I'm Karim Sarhan—a recent computer science graduate and passionate
+            Full Stack Web Developer. I specialize in building responsive,
+            user-centric web applications using React and Vite on the frontend,
+            with Node.js powering the backend. My designs are styled with Tailwind
+            CSS and handcrafted CSS to ensure pixel-perfect layouts and smooth UX
+            on every device. During my studies, I collaborated on several team
+            projects—implementing RESTful APIs, optimizing database schemas, and
+            integrating third-party services. I thrive on solving complex
+            problems, whether it's reducing load times, architecting scalable
+            services, or writing clean, maintainable code. I'm eager to leverage
+            my solid foundation in data structures and algorithms, strong
+            communication skills, and continuous-learning mindset to bring your
+            ideas to life and to grow alongside a forward-thinking team. Let's
+            build something great together!
+          </span>
         </p>
       </div>
 
@@ -37,7 +48,7 @@ const Hero = () => {
       </div>
 
       <div className="ml-5 pl-5">
-        <p className="text-4xl mb-4 ">About Me</p>
+      <h1 className={`${styles.glitchText} text-6xl font-['Orbitron'] font-bold`} data-text="About Me">About Me</h1>
         <p>let's build quality in programing ad design with our services</p>
         <a href="#" className={`${styles.navLink} ${styles.effect6} text-white text-xl`}>
               <span className={styles.navSpan}>
