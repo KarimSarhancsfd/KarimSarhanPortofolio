@@ -8,7 +8,7 @@ import styles from './Testtimonial.module.css';
 
 export default function Testimonial() {
   return (
-    <div className={styles.carousel} mask>
+    <div className={styles.carousel} mask='true'>
       <article>
         <img src={t1} alt="John Doe" />
       </article>

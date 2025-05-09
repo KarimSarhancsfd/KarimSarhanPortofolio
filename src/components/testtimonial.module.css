@@ -2,14 +2,14 @@
 .carousel {
   --items: 4;
   --carousel-duration: 30s;
-  --carousel-width: min(80vw, 1200px);
+  --carousel-width: min(300vw, 1200px);
   --carousel-item-width: 300px;
-  --carousel-item-gap: 2rem;
-  --clr-cta: rgb(0, 132, 209);
+  --carousel-item-gap: 1rem;
+  /* --clr-cta: rgb(0, 132, 209); */
 
   position: relative;
   width: var(--carousel-width);
-  height: 350px;
+  height: 300px;
   overflow: hidden;
   margin: 0 auto;
 }
@@ -61,14 +61,15 @@
   display: grid;
   grid-template-rows: 150px auto 1fr auto;
   gap: 0.5rem;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  /* border: 1px solid rgba(0, 0, 0, 0.1); */
   padding: 1rem;
-  border-radius: 10px;
-  background: white;
-  color: #333;
+  /* border-radius: 10px; */
+  /* background: white; */
+  /* color: #333; */
   animation: marquee var(--carousel-duration) linear infinite;
   animation-delay: calc(
     var(--carousel-duration) / var(--items) * var(--i) * -1
+    
   );
 }
 
