@@ -4,20 +4,17 @@ import { CgNametag } from "react-icons/cg";
 import { AiOutlineClose } from "react-icons/ai";
 import styles from './nav.module.css';
 
+
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-  const openMenu = () => {
-    setToggle(true);
-  };
-
-  const closeMenu = () => {
-    setToggle(false);
-  };
+  const openMenu = () => setToggle(true);
+  const closeMenu = () => setToggle(false);
 
   return (
     <>
-      <div className="flex rounded-2xl justify-between items-center p-10 lg:flex-row relative  min-h-[100px]">
+      <div className={`flex rounded-2xl justify-between items-center p-10 lg:flex-row relative min-h-[100px] ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
         {/* Enhanced Fire Effect Container */}
         <div className={`${styles.navFireContainer} w-full h-full`}>
           {[...Array(50)].map((_, i) => (
@@ -36,60 +33,82 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div>
-          <a href="#" className="text-white font-mono text-3xl tracking-wider flex items-center">
-            <CgNametag />
-            AUCODE
+        {/* Logo with 3D effect */}
+        <div className="relative group">
+          <a href="#" className={`text-${isDarkMode ? 'white' : 'gray-900'} font-mono text-3xl tracking-wider flex items-center transform transition-transform duration-500 hover:scale-110 hover:rotate-3`}>
+            <CgNametag className="mr-2 transform transition-transform duration-500 group-hover:rotate-12" />
+            <span className="relative">
+              AUCODE
+              <span className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-600 opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-300"></span>
+            </span>
           </a>
         </div>
 
+        {/* Day/Night Toggle */}
+        <div className="absolute right-4 top-4">
+          <h2 className="sr-only">Day/Night Toggle</h2>
+          <div className="toggle toggle--daynight">
+            <input 
+              type="checkbox" 
+              id="toggle--daynight" 
+              className="toggle--checkbox"
+              checked={isDarkMode}
+              onChange={() => setIsDarkMode(!isDarkMode)}
+            />
+            <label className="toggle--btn" htmlFor="toggle--daynight">
+              <span className="toggle--feature"></span>
+            </label>
+          </div>
+        </div>
+
+        {/* Navigation Links */}
         <div>
           <div className="hidden sm:block lg:block">
-            {/* Removed hover:bg-indigo-800 from all navigation links */}
-            <a href="#" className={`${styles.navLink} ${styles.effect4} text-white text-xl rounded-full px-5 py-2`}>
+            <a href="#" className={`${styles.navLink} ${styles.effect4} text-${isDarkMode ? 'white' : 'gray-900'} text-xl rounded-full px-5 py-2 transform transition-transform duration-300 hover:translate-y-1`}>
               <span className={styles.navSpan}>skills</span>
             </a>
-            <a href="#" className={`${styles.navLink} ${styles.effect5} text-white text-xl rounded-full px-5 py-2`}>
+            <a href="#" className={`${styles.navLink} ${styles.effect5} text-${isDarkMode ? 'white' : 'gray-900'} text-xl rounded-full px-5 py-2 transform transition-transform duration-300 hover:translate-y-1`}>
               <span className={styles.navSpan}>projects</span>
             </a>
-            <a href="#" className={`${styles.navLink} ${styles.effect7} text-white text-xl rounded-full px-5 py-2`}>
-                <span className={styles.navSpan}>testimonials</span>
+            <a href="#" className={`${styles.navLink} ${styles.effect7} text-${isDarkMode ? 'white' : 'gray-900'} text-xl rounded-full px-5 py-2 transform transition-transform duration-300 hover:translate-y-1`}>
+              <span className={styles.navSpan}>testimonials</span>
             </a>
           </div>
 
+          {/* Mobile Menu */}
           <div className="sm:hidden lg:hidden">
-            {toggle ? (
-              <AiOutlineClose
-                onClick={closeMenu}
-                size={30}
-                className="text-white cursor-pointer "
+            <svg 
+              className={`${styles.menuIcon} ${toggle ? 'active' : ''} text-${isDarkMode ? 'white' : 'gray-900'}`}
+              viewBox="0 0 100 100"
+              onClick={toggle ? closeMenu : openMenu}
+            >
+              <path 
+                className="topLine"
+                d="M 20 20 C 24 20 36 20 50 20 C 64 20 76 20 80 20"
               />
-            ) : (
-              <HiMenuAlt1
-                onClick={openMenu}
-                size={30}
-                className="text-white cursor-pointer"
+              <path 
+                className="middleLine"
+                d="M20 50h30h30"
               />
-            )}
+              <path 
+                className="bottomLine"
+                d="M 20 80 C 24 80 36 80 50 80 C 64 80 76 80 80 80"
+              />
+            </svg>
           </div>
         </div>
       </div>
 
+      {/* Mobile Menu Content */}
       <div className="flex justify-between ml-10">
-        {toggle ? (
-          <div>
-            <ul>
-              <li className="text-white text-xl mb-2 cursor-pointer">skills</li>
-              <li className="text-white text-xl mb-2 cursor-pointer">
-                projects
-              </li>
-              <li className="text-white text-xl mb-2 cursor-pointer">
-                testimonials
-              </li>
+        {toggle && (
+          <div className={`w-full p-4 ${isDarkMode ? 'bg-gray-800' : 'bg-gray-100'} rounded-lg shadow-lg`}>
+            <ul className="space-y-3">
+              <li className={`text-${isDarkMode ? 'white' : 'gray-900'} text-xl mb-2 cursor-pointer hover:pl-4 transition-all duration-300`}>skills</li>
+              <li className={`text-${isDarkMode ? 'white' : 'gray-900'} text-xl mb-2 cursor-pointer hover:pl-4 transition-all duration-300`}>projects</li>
+              <li className={`text-${isDarkMode ? 'white' : 'gray-900'} text-xl mb-2 cursor-pointer hover:pl-4 transition-all duration-300`}>testimonials</li>
             </ul>
           </div>
-        ) : (
-          <div></div>
         )}
       </div>
     </>

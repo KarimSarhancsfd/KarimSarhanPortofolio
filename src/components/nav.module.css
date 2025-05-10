@@ -237,5 +237,44 @@ a:before, a:after, a > span:before, a > span:after {
   }
 }
 
+.menuIcon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menuIcon:hover {
+  transform: scale(1.1);
+}
+
+.menuIcon path {
+  stroke: currentColor;
+  stroke-width: 10;
+  stroke-linecap: round;
+  transition: all 0.5s ease;
+}
+
+.menuIcon:hover path {
+  stroke-width: 12;
+}
+
+.menuIcon.active .topLine {
+  d: path('M 20 20 C 37 37 37 37 50 50 C 63 37 63 37 80 20');
+}
+
+.menuIcon.active .middleLine {
+  d: path('M 50 50 h 0 h 0');
+}
+
+.menuIcon.active .bottomLine {
+  d: path('M 20 80 C 37 63 37 63 50 50 C 63 63 63 63 80 80');
+}
+
+.menuIcon.active:hover .topLine,
+.menuIcon.active:hover .bottomLine {
+  stroke-width: 14;
+}
+
 
   
