@@ -7,14 +7,17 @@ import Project from './Project'
 import Testtimonial from './Testtimonial'
 import Footer from './Footer'
 import Background from './Background';
-// import Background2 from './Background2';
-
+import Orb from './Orb';
 
 function Mainn() {
   return (
     <div className='bg-indigo-400 rounded-2xl relative min-h-screen'>
       <Background />
-     
+      
+    
+       
+    
+
       <div className={styles.triangleContainer}>
         {/* Left side triangles */}
         {[...Array(10)].map((_, i) => (
@@ -28,7 +31,7 @@ function Mainn() {
           />
         ))}
         
-      
+        
 
  
       {/* Existing bubbles */}
@@ -77,7 +80,9 @@ function Mainn() {
         <Project/>
      <Testtimonial/>
      <Footer/>
+    
     </div>
+    
   )  
   
 }
