@@ -5,6 +5,7 @@ import Mainn from './components/Mainn'
 function App() {
   return (
  <>
+ 
  <Mainn/>
  </>
   )

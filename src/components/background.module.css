@@ -6,31 +6,50 @@
   height: 100%;
   z-index: -1;
   overflow: hidden;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  background: 
+    radial-gradient(ellipse at bottom, #1a1a2e 0%, #090a0f 100%);
 }
 
-.shape {
+.particle {
   position: absolute;
   top: var(--y);
   left: var(--x);
   width: var(--size);
   height: var(--size);
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 50%;
+  background: var(--color);
+  border-radius: var(--shape);
+  transform: translateZ(calc(var(--depth) * 10px));
   animation: float var(--duration) ease-in-out infinite var(--delay);
+  filter: 
+    blur(calc(var(--depth) * 0.5px)) 
+    drop-shadow(0 0 calc(var(--depth) * 3px) var(--glow));
+  opacity: var(--opacity);
+  mix-blend-mode: screen;
 }
 
 @keyframes float {
   0%, 100% {
-    transform: translate(0, 0);
+    transform: 
+      translate(0, 0) 
+      translateZ(calc(var(--depth) * 10px))
+      rotate(0deg);
   }
   25% {
-    transform: translate(10px, -15px);
+    transform: 
+      translate(15px, -20px) 
+      translateZ(calc(var(--depth) * 15px))
+      rotate(5deg);
   }
   50% {
-    transform: translate(-5px, 10px);
+    transform: 
+      translate(-10px, 15px) 
+      translateZ(calc(var(--depth) * 5px))
+      rotate(-5deg);
   }
   75% {
-    transform: translate(-10px, -5px);
+    transform: 
+      translate(-15px, -10px) 
+      translateZ(calc(var(--depth) * 20px))
+      rotate(10deg);
   }
 }
