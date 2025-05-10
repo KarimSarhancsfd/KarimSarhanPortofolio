@@ -5,13 +5,12 @@ import styles from './hero2.module.css';
 
 const Hero = () => {
   return (
-    <section className="flex flex-col lg:flex-row justify-between items-center min-h-screen px-5 lg:px-20 py-20 lg:py-0 bg-gradient-to-r from-violet to-violet2 text-white relative">
+    <section className="flex flex-col lg:flex-row justify-between items-center min-h-screen px-5 lg:px-20 py-20 lg:py-0 bg-gradient-to-r from-indigo-900 via-indigo-800 to-indigo-700 text-white relative">
       {/* Left Content */}
       <div className="lg:w-1/2 xl:w-1/3 mb-12 lg:mb-0 relative z-10">
-        <div className="relative bg-black/20 rounded-xl p-6 backdrop-blur-lg">
+        <div className="relative bg-indigo-900/50 rounded-xl p-6 backdrop-blur-lg">
           <div className="absolute inset-0 -z-10">
-            <div className="absolute inset-0 bg-[url('https://i.ibb.co/RpXVy0nP/Leaf-Sketch-Exemplars-1.jpg')] bg-cover mix-blend-mode-overlay opacity-75 rounded-xl"></div>
-            <div className="absolute inset-0 bg-[url('https://i.ibb.co/9kd2NJRz/Grain-Texture-07-1024x1024-q22.jpg')] bg-cover mix-blend-mode-screen opacity-65"></div>
+      
             <div className="absolute inset-0 bg-[length:20px_20px] bg-[linear-gradient(to_right,rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.1)_1px,transparent_1px)]"></div>
           </div>
           
@@ -20,7 +19,7 @@ const Hero = () => {
             KIM
           </h1>
           <hr className="mr-4 lg:mr-10 border-t-2 border-white/20 my-4" />
-          <p className="text-sm lg:text-base mr-4 lg:mr-10 text-slate-300 font-['Share_Tech_Mono'] relative bg-black/10 p-4 rounded-lg backdrop-blur-sm">
+          <p className="text-sm lg:text-base mr-4 lg:mr-10 text-slate-300 font-['Share_Tech_Mono'] relative bg-indigo-900/30 p-4 rounded-lg backdrop-blur-sm">
             <span className={`${styles.crtEffect} relative z-10`}>
               I'm Karim Sarhan—a recent computer science graduate and passionate
               Full Stack Web Developer. I specialize in building responsive,

@@ -7,12 +7,30 @@ import Project from './Project'
 import Testtimonial from './Testtimonial'
 import Footer from './Footer'
 import Background from './Background';
+// import Background2 from './Background2';
 
 
 function Mainn() {
   return (
     <div className='bg-indigo-400 rounded-2xl relative min-h-screen'>
       <Background />
+     
+      <div className={styles.triangleContainer}>
+        {/* Left side triangles */}
+        {[...Array(10)].map((_, i) => (
+          <div 
+            key={`left-${i}`} 
+            className={styles.triangleLeft} 
+            style={{
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${i * 0.3}s`
+            }}
+          />
+        ))}
+        
+      
+
+ 
       {/* Existing bubbles */}
       <div className={styles.bubbles}>
         <div className={styles.bubble} style={{"--position": "5%", "--size": "2rem", "--time": "6s", "--delay": "0.5s"}}>K</div>
@@ -39,19 +57,6 @@ function Mainn() {
       </div>
       
       {/* New triangle effect */}
-      <div className={styles.triangleContainer}>
-        {/* Left side triangles */}
-        {[...Array(10)].map((_, i) => (
-          <div 
-            key={`left-${i}`} 
-            className={styles.triangleLeft} 
-            style={{
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${i * 0.3}s`
-            }}
-          />
-        ))}
-        
         {/* Right side triangles */}
         {[...Array(10)].map((_, i) => (
           <div 
@@ -73,8 +78,7 @@ function Mainn() {
      <Testtimonial/>
      <Footer/>
     </div>
-    
-  )
+  )  
+  
 }
-
 export default Mainn
