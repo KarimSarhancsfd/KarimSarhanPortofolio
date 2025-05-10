@@ -5,69 +5,91 @@ import styles from './hero2.module.css';
 
 const Hero = () => {
   return (
-    <section className="flex flex-col lg:flex-row justify-between items-center h-screen px-10 lg:px-20 bg-gradient-to-r from-violet to-violet2 text-white">
-      <div className="lg:w-1/3 sm:w-fit relative">
-        {/* Glitch background effects */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-[url('https://i.ibb.co/RpXVy0nP/Leaf-Sketch-Exemplars-1.jpg')] bg-cover mix-blend-mode-overlay opacity-75 rounded-xl"></div>
-          <div className="absolute inset-0 bg-[url('https://i.ibb.co/9kd2NJRz/Grain-Texture-07-1024x1024-q22.jpg')] bg-cover mix-blend-mode-screen opacity-65"></div>
-          <div className="absolute inset-0 bg-[length:20px_20px] bg-[linear-gradient(to_right,rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.1)_1px,transparent_1px)]"></div>
+    <section className="flex flex-col lg:flex-row justify-between items-center min-h-screen px-5 lg:px-20 py-20 lg:py-0 bg-gradient-to-r from-violet to-violet2 text-white relative">
+      {/* Left Content */}
+      <div className="lg:w-1/2 xl:w-1/3 mb-12 lg:mb-0 relative z-10">
+        <div className="relative bg-black/20 rounded-xl p-6 backdrop-blur-lg">
+          <div className="absolute inset-0 -z-10">
+            <div className="absolute inset-0 bg-[url('https://i.ibb.co/RpXVy0nP/Leaf-Sketch-Exemplars-1.jpg')] bg-cover mix-blend-mode-overlay opacity-75 rounded-xl"></div>
+            <div className="absolute inset-0 bg-[url('https://i.ibb.co/9kd2NJRz/Grain-Texture-07-1024x1024-q22.jpg')] bg-cover mix-blend-mode-screen opacity-65"></div>
+            <div className="absolute inset-0 bg-[length:20px_20px] bg-[linear-gradient(to_right,rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.1)_1px,transparent_1px)]"></div>
+          </div>
+          
+          <p className="text-2xl lg:text-4xl mb-3 lg:mb-5 text-slate-300 font-['Share_Tech_Mono']">I'm</p>
+          <h1 className={`${styles.glitchText} text-4xl lg:text-6xl font-['Orbitron'] font-bold`} data-text="KIM">
+            KIM
+          </h1>
+          <hr className="mr-4 lg:mr-10 border-t-2 border-white/20 my-4" />
+          <p className="text-sm lg:text-base mr-4 lg:mr-10 text-slate-300 font-['Share_Tech_Mono'] relative bg-black/10 p-4 rounded-lg backdrop-blur-sm">
+            <span className={`${styles.crtEffect} relative z-10`}>
+              I'm Karim Sarhan—a recent computer science graduate and passionate
+              Full Stack Web Developer. I specialize in building responsive,
+              user-centric web applications using React and Vite on the frontend,
+              with Node.js powering the backend...
+            </span>
+          </p>
         </div>
-        
-        <p className="text-4xl mb-5 text-slate-300 font-['Share_Tech_Mono']">I'm</p>
-        <h1 className={`${styles.glitchText} text-6xl font-['Orbitron'] font-bold`} data-text="KIM">
-          KIM
-        </h1>
-        <hr className="mr-10 border-t-2 border-white/20" />
-        <p className="mt-5 mr-10 text-xs text-slate-300 font-['Share_Tech_Mono'] relative bg-black/5 p-4 rounded-lg backdrop-blur-sm">
-          <span className={`${styles.crtEffect} relative z-10`}>
-            I'm Karim Sarhan—a recent computer science graduate and passionate
-            Full Stack Web Developer. I specialize in building responsive,
-            user-centric web applications using React and Vite on the frontend,
-            with Node.js powering the backend. My designs are styled with Tailwind
-            CSS and handcrafted CSS to ensure pixel-perfect layouts and smooth UX
-            on every device. During my studies, I collaborated on several team
-            projects—implementing RESTful APIs, optimizing database schemas, and
-            integrating third-party services. I thrive on solving complex
-            problems, whether it's reducing load times, architecting scalable
-            services, or writing clean, maintainable code. I'm eager to leverage
-            my solid foundation in data structures and algorithms, strong
-            communication skills, and continuous-learning mindset to bring your
-            ideas to life and to grow alongside a forward-thinking team. Let's
-            build something great together!
-          </span>
-        </p>
       </div>
 
-      <div className="w-1/3 items-center  sm:w-fit">
-        <img
-          src={HeroPic}
-          className="h-60 w-60   rounded-lg transform transition-transform duration-500 hover:scale-[1.5] hover:rotate-[360deg] hover:skew-x-[20deg] hover:shadow-[0_20px_60px_rgba(255,0,144,1)] hover:brightness-200 hover:contrast-150 hover:rounded-full hover:border-[5px] hover:border-[#ED80E9]"
-          alt="Hero"
-        />
+      {/* Image Container */}
+      <div className="w-full lg:w-1/3 mb-12 lg:mb-0 flex justify-center relative z-10">
+        <div className="relative group w-48 h-48 lg:w-60 lg:h-60">
+          <img
+            src={HeroPic}
+            className="w-full h-full object-cover rounded-lg transform transition-transform duration-500 group-hover:scale-[1.5] group-hover:rotate-[360deg] group-hover:skew-x-[20deg] group-hover:shadow-[0_20px_60px_rgba(255,0,144,1)] group-hover:brightness-200 group-hover:contrast-150 group-hover:rounded-full group-hover:border-[5px] group-hover:border-[#ED80E9]"
+            alt="Hero"
+          />
+        </div>
       </div>
 
-      <div className="ml-5 pl-5">
-      <h1 className={`${styles.glitchText} text-6xl font-['Orbitron'] font-bold`} data-text="About Me">About Me</h1>
-        <p>let's build quality in programing ad design with our services</p>
-        <a href="#" className={`${styles.navLink} ${styles.effect6} text-white text-xl`}>
+      {/* Right Content - Visible on All Screens */}
+      <div className="w-full lg:w-1/4 relative z-10">
+        <div className="lg:ml-5 lg:pl-5 lg:border-l-2 lg:border-white/20">
+          <h1 className={`${styles.glitchText} text-4xl lg:text-6xl font-['Orbitron'] font-bold mb-4 text-center lg:text-left`} data-text="About Me">
+            About Me
+          </h1>
+          <p className="text-sm lg:text-base mb-4 text-center lg:text-left">Let's build quality in programming and design with our services</p>
+          <div className="flex justify-center lg:justify-start">
+            <a href="#" className={`${styles.navLink} ${styles.effect6} text-white text-lg`}>
               <span className={styles.navSpan}>
                 <span className={styles.glowText}>ShowMore...</span>
                 <span className={styles.particles}></span>
               </span>
             </a>
-            <div className="flex  mt-5 space-x-4 cursor-pointer justify-center">
-          <BsYoutube 
-            size={40}  
-            className="border-2 hover:border-indigo-800 hover:bg-indigo-800 hover:text-white rounded-full p-2 transition-all duration-300 ease-in-out transform hover:scale-110"
-          />
-              <BsLinkedin size={40}
-              className="border-2 hover:border-indigo-800 hover:bg-indigo-800 hover:text-white rounded-full p-2 transition-all duration-300 ease-in-out transform hover:scale-110"
-              />
-              <FaGithub size={40}
-              className="border-2 hover:border-indigo-800 hover:bg-indigo-800 hover:text-white rounded-full p-2 transition-all duration-300 ease-in-out transform hover:scale-110"
-              />
-            </div>
+          </div>
+          
+          {/* Icons - Mobile Layout */}
+          <div className="lg:hidden flex justify-center mt-8 space-x-6">
+            <BsYoutube 
+              size={32}  
+              className="border-2 hover:border-indigo-800 hover:bg-indigo-800 hover:text-white rounded-full p-1 transition-all duration-300 ease-in-out"
+            />
+            <BsLinkedin 
+              size={32}
+              className="border-2 hover:border-indigo-800 hover:bg-indigo-800 hover:text-white rounded-full p-1 transition-all duration-300 ease-in-out"
+            />
+            <FaGithub 
+              size={32}
+              className="border-2 hover:border-indigo-800 hover:bg-indigo-800 hover:text-white rounded-full p-1 transition-all duration-300 ease-in-out"
+            />
+          </div>
+
+          {/* Icons - Desktop Layout */}
+          <div className="hidden lg:flex mt-8 space-x-4 cursor-pointer justify-center lg:justify-start">
+            <BsYoutube 
+              size={40}  
+              className="border-2 hover:border-indigo-800 hover:bg-indigo-800 hover:text-white rounded-full p-2 transition-all duration-300 ease-in-out"
+            />
+            <BsLinkedin 
+              size={40}
+              className="border-2 hover:border-indigo-800 hover:bg-indigo-800 hover:text-white rounded-full p-2 transition-all duration-300 ease-in-out"
+            />
+            <FaGithub 
+              size={40}
+              className="border-2 hover:border-indigo-800 hover:bg-indigo-800 hover:text-white rounded-full p-2 transition-all duration-300 ease-in-out"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
