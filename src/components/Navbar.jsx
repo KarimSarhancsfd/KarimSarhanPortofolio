@@ -44,22 +44,28 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* Day/Night Toggle */}
-        <div className="absolute right-4 top-4">
-          <h2 className="sr-only">Day/Night Toggle</h2>
-          <div className="toggle toggle--daynight">
-            <input 
-              type="checkbox" 
-              id="toggle--daynight" 
-              className="toggle--checkbox"
-              checked={isDarkMode}
-              onChange={() => setIsDarkMode(!isDarkMode)}
-            />
-            <label className="toggle--btn" htmlFor="toggle--daynight">
-              <span className="toggle--feature"></span>
-            </label>
-          </div>
-        </div>
+        
+
+
+  
+      <h2 className="headingOuter">Day/Night Toggle</h2>
+      <div className={styles.toggleDaynight}>
+        <input
+          type="checkbox"
+          id="toggleDaynight"
+          className={styles.toggleCheckbox}
+          checked={isDarkMode}
+          onChange={() => setIsDarkMode(!isDarkMode)}
+        />
+        <label className={styles.toggleBtn} htmlFor="toggleDaynight">
+          <span className={styles.toggleFeature}></span>
+        </label>
+      </div>
+    
+  
+
+
+
 
         {/* Navigation Links */}
         <div>
