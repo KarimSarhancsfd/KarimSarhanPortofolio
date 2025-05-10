@@ -48,7 +48,7 @@ const Navbar = () => {
 
 
   
-      <h2 className="headingOuter">Day/Night Toggle</h2>
+     
       <div className={styles.toggleDaynight}>
         <input
           type="checkbox"
