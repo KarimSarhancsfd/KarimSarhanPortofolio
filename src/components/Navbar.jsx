@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { HiMenuAlt1 } from "react-icons/hi";
 import { CgNametag } from "react-icons/cg";
 import { AiOutlineClose } from "react-icons/ai";
 import styles from './nav.module.css';
-
+import { ThemeContext } from '../context/ThemeContext';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const { isDarkMode, setIsDarkMode } = useContext(ThemeContext);
 
   const openMenu = () => setToggle(true);
   const closeMenu = () => setToggle(false);
@@ -28,6 +28,7 @@ const Navbar = () => {
                 animationDuration: `${Math.random() * 3 + 2}s`,
                 width: `${Math.random() * 10 + 6}px`,
                 height: `${Math.random() * 10 + 6}px`,
+                background: isDarkMode ? 'linear-gradient(to top, #ff4500, #ff8c00, #ffcc00)' : 'linear-gradient(to top, #00b4db, #0083b0, #00b4db)'
               }}
             />
           ))}
@@ -38,17 +39,13 @@ const Navbar = () => {
           <a href="#" className={`text-${isDarkMode ? 'white' : 'gray-900'} font-mono text-3xl tracking-wider flex items-center transform transition-transform duration-500 hover:scale-110 hover:rotate-3`}>
             <CgNametag className="mr-2 transform transition-transform duration-500 group-hover:rotate-12" />
             <span className="relative">
-              AUCODE
+              Karim
               <span className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-600 opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-300"></span>
             </span>
           </a>
         </div>
 
-        
 
-
-  
-     
       <div className={styles.toggleDaynight}>
         <input
           type="checkbox"

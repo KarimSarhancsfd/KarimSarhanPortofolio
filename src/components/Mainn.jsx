@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Navbar from './Navbar'
 import Hero from './Hero'
 import styles from './mainn.module.css'
@@ -8,10 +8,13 @@ import Testtimonial from './Testtimonial'
 import Footer from './Footer'
 import Background from './Background';
 import Orb from './Orb';
+import { ThemeContext } from '../context/ThemeContext'
 
 function Mainn() {
+  const { isDarkMode } = useContext(ThemeContext);
+  
   return (
-    <div className='bg-indigo-400 rounded-2xl relative min-h-screen'>
+    <div className={`${isDarkMode ? 'bg-gray-800' : 'bg-indigo-200'} rounded-2xl relative min-h-screen`}>
       <Background />
       
     
@@ -86,4 +89,4 @@ function Mainn() {
   )  
   
 }
-export default Mainn
+export default Mainn;
