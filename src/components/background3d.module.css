@@ -1,0 +1,101 @@
+.background3d {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  perspective: 1000px;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #000000 0%, #1a1a1a 100%);
+}
+
+.particle3d {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  animation: float3d 10s infinite ease-in-out;
+  box-shadow: 0 0 20px rgba(255, 65, 108, 0.8);
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 2s infinite alternate;
+}
+
+@keyframes float3d {
+  0% {
+    transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg);
+  }
+  25% {
+    transform: translate3d(200px, 150px, 200px) rotateX(45deg) rotateY(45deg);
+  }
+  50% {
+    transform: translate3d(-200px, 300px, -200px) rotateX(90deg) rotateY(90deg);
+  }
+  75% {
+    transform: translate3d(200px, 450px, 200px) rotateX(135deg) rotateY(135deg);
+  }
+  100% {
+    transform: translate3d(0, 600px, 0) rotateX(180deg) rotateY(180deg);
+  }
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.starParticle {
+  background: transparent;
+  border-bottom: 3px solid #ffd700;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  transform: rotate(45deg);
+  animation: starTwinkle 2s infinite alternate;
+}
+
+.cometParticle {
+  background: linear-gradient(to right, transparent, #00ffff);
+  width: 30px !important;
+  height: 3px !important;
+  animation: cometTrail 5s linear infinite;
+}
+
+.sparkleParticle {
+  background: radial-gradient(circle, #ffffff 10%, transparent 70%);
+  animation: sparkle 1.5s infinite alternate;
+}
+
+.circleParticle {
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  border-radius: 50%;
+}
+
+@keyframes starTwinkle {
+  0% { opacity: 0.5; transform: scale(0.8) rotate(45deg); }
+  100% { opacity: 1; transform: scale(1.2) rotate(45deg); }
+}
+
+@keyframes cometTrail {
+  0% { transform: translateX(-100%); opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes sparkle {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  100% { transform: scale(1.2); opacity: 1; }
+}

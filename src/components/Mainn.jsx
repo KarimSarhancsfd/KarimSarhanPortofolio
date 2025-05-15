@@ -7,6 +7,7 @@ import Project from './Project'
 import Testtimonial from './Testtimonial'
 import Footer from './Footer'
 import Background from './Background';
+import Background3d from './Background3d';
 import Orb from './Orb';
 import { ThemeContext } from '../context/ThemeContext'
 
@@ -15,7 +16,7 @@ function Mainn() {
   
   return (
     <div className={`${isDarkMode ? 'bg-gray-800' : 'bg-indigo-200'} rounded-2xl relative min-h-screen`}>
-      <Background />
+      {isDarkMode ? <Background3d /> : <Background />}
       
     
        
