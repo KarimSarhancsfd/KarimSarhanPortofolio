@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext,useEffect } from "react";
 import { HiMenuAlt1 } from "react-icons/hi";
 import { CgNametag } from "react-icons/cg";
 import { AiOutlineClose } from "react-icons/ai";
@@ -8,6 +8,42 @@ import { ThemeContext } from '../context/ThemeContext';
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const { isDarkMode, setIsDarkMode } = useContext(ThemeContext);
+
+  // Add scrollbar styles based on theme
+  useEffect(() => {
+    const scrollbarThumb = isDarkMode 
+      ? 'linear-gradient(45deg, #ff4500, #ff8c00)'
+      : 'linear-gradient(45deg, #00b4db, #0083b0)';
+      
+    const scrollbarTrack = isDarkMode 
+      ? 'linear-gradient(45deg, #292966, #1a1a3d)'
+      : 'linear-gradient(45deg, #f0f0f0, #e0e0e0)';
+
+    const style = document.createElement('style');
+    style.innerHTML = `
+      .navbar-scrollbar::-webkit-scrollbar {
+        width: 12px;
+        background: transparent;
+      }
+      .navbar-scrollbar::-webkit-scrollbar-track {
+        background: ${scrollbarTrack};
+        border-radius: 10px;
+      }
+      .navbar-scrollbar::-webkit-scrollbar-thumb {
+        background: ${scrollbarThumb};
+        border-radius: 10px;
+        border: 2px solid ${isDarkMode ? '#1a1a3d' : '#e0e0e0'};
+      }
+      .navbar-scrollbar::-webkit-scrollbar-thumb:hover {
+        transform: scaleY(1.2) scaleX(1.05);
+      }
+    `;
+    document.head.appendChild(style);
+
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, [isDarkMode]);
 
   const openMenu = () => setToggle(true);
   const closeMenu = () => setToggle(false);

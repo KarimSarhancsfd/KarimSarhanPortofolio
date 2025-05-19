@@ -18,4 +18,62 @@
     --color-gray: #6b7280;
     --color-gray-100: #f3f4f6;
     --color-white: #D3D3FF;
+    
+    /* Scrollbar Variables */
+    --scrollbar-track-day: linear-gradient(45deg, var(--color-violet1) 0%, #8686AC 100%);
+    --scrollbar-thumb-day: radial-gradient(circle, var(--color-white) 30%, var(--color-violet1) 90%);
+    --scrollbar-track-night: linear-gradient(45deg, #292966 0%, #1a1a3d 100%);
+    --scrollbar-thumb-night: radial-gradient(circle, #9ee3fb 30%, #86c3d7 90%);
+}
+
+/* Space Theme Scrollbar */
+/* Enhanced Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 14px;
+    background: transparent;
+    transition: all 0.3s var(--ease-quart);
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 8px;
+    box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    background: var(--scrollbar-track-day);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    transition: all 0.3s var(--ease-quart), transform 0.2s;
+    background: var(--scrollbar-thumb-day);
+}
+
+/* Night Mode Scrollbar */
+.night-mode ::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-night);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.night-mode ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb-night);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Hover Effects */
+::-webkit-scrollbar-thumb:hover {
+    transform: scaleY(1.2) scaleX(1.05);
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
+}
+
+/* Day/Night Mode Transition */
+body {
+    transition: background-color 0.5s ease, color 0.3s ease;
+}
+
+.night-mode {
+    --scrollbar-track-day: linear-gradient(45deg, #292966 0%, #1a1a3d 100%);
+    --scrollbar-thumb-day: radial-gradient(circle, #9ee3fb 30%, #86c3d7 90%);
+    background-color: #0a0a1a;
+    color: #e0e0ff;
 }
