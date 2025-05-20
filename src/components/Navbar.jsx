@@ -1,7 +1,7 @@
 import React, { useState, useContext,useEffect } from "react";
-import { HiMenuAlt1 } from "react-icons/hi";
+
 import { CgNametag } from "react-icons/cg";
-import { AiOutlineClose } from "react-icons/ai";
+
 import styles from './nav.module.css';
 import { ThemeContext } from '../context/ThemeContext';
 
@@ -21,20 +21,20 @@ const Navbar = () => {
 
     const style = document.createElement('style');
     style.innerHTML = `
-      .navbar-scrollbar::-webkit-scrollbar {
+      ::-webkit-scrollbar {
         width: 12px;
         background: transparent;
       }
-      .navbar-scrollbar::-webkit-scrollbar-track {
+      ::-webkit-scrollbar-track {
         background: ${scrollbarTrack};
         border-radius: 10px;
       }
-      .navbar-scrollbar::-webkit-scrollbar-thumb {
+      ::-webkit-scrollbar-thumb {
         background: ${scrollbarThumb};
         border-radius: 10px;
         border: 2px solid ${isDarkMode ? '#1a1a3d' : '#e0e0e0'};
       }
-      .navbar-scrollbar::-webkit-scrollbar-thumb:hover {
+      ::-webkit-scrollbar-thumb:hover {
         transform: scaleY(1.2) scaleX(1.05);
       }
     `;
