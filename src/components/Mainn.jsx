@@ -1,19 +1,25 @@
-import React, { useContext } from 'react'
-import Navbar from './Navbar'
-import Hero from './Hero'
-import styles from './mainn.module.css'
-import SliderComponent from './SliderComponent'
-import Project from './Project'
-import Testtimonial from './Testtimonial'
-import Footer from './Footer'
+import React, { useContext } from 'react';
+import { useInView } from 'react-intersection-observer';
+import Navbar from './Navbar';
+import Hero from './Hero';
+import styles from './mainn.module.css';
+import SliderComponent from './SliderComponent';
+import Project from './Project';
+import Testtimonial from './Testtimonial';
+import Footer from './Footer';
 import Background from './Background';
 import Background3d from './Background3d';
 import Orb from './Orb';
-import { ThemeContext } from '../context/ThemeContext'
+import { ThemeContext } from '../context/ThemeContext';
 
 function Mainn() {
   const { isDarkMode } = useContext(ThemeContext);
   
+  const [heroRef, heroInView] = useInView({ triggerOnce: true });
+  const [sliderRef, sliderInView] = useInView({ triggerOnce: true });
+  const [projectRef, projectInView] = useInView({ triggerOnce: true });
+  const [testimonialRef, testimonialInView] = useInView({ triggerOnce: true });
+
   return (
     <div className={`${isDarkMode ? 'bg-gray-800' : 'bg-indigo-200'} rounded-2xl relative min-h-screen`}>
       {isDarkMode ? <Background3d /> : <Background />}
@@ -76,18 +82,30 @@ function Mainn() {
           />
         ))}
       </div>
-        <Navbar/>
-        <Hero/>
+        <div ref={heroRef} className={`transition-all duration-1000 ${heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
+          <Navbar/>
+          <Hero/>
+        </div>
+        
         <hr />
-        <SliderComponent/>
+        
+        <div ref={sliderRef} className={`transition-all duration-1000 ${sliderInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
+          <SliderComponent/>
+        </div>
+        
         <hr />
-        <Project/>
-     <Testtimonial/>
-     <Footer/>
-    
-    </div>
-    
-  )  
-  
+        
+        <div ref={projectRef} className={`transition-all duration-1000 ${projectInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
+          <Project/>
+        </div>
+        
+        <div ref={testimonialRef} className={`transition-all duration-1000 ${testimonialInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
+          <Testtimonial/>
+        </div>
+        
+        <Footer/>
+      </div>
+    );
 }
+
 export default Mainn;

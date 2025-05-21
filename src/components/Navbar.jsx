@@ -103,13 +103,13 @@ const Navbar = () => {
         {/* Navigation Links */}
         <div>
           <div className="hidden sm:block lg:block">
-            <a href="#" className={`${styles.navLink} ${styles.effect4} text-${isDarkMode ? 'white' : 'gray-900'} text-xl rounded-full px-5 py-2 transform transition-transform duration-300 hover:translate-y-1`}>
+            <a href="#" className={`${styles.navLink} ${styles.effect4} text-${isDarkMode ? 'white' : 'black'} text-xl rounded-full px-5 py-2 transform transition-transform duration-300 hover:translate-y-1`}>
               <span className={styles.navSpan}>skills</span>
             </a>
-            <a href="#" className={`${styles.navLink} ${styles.effect5} text-${isDarkMode ? 'white' : 'gray-900'} text-xl rounded-full px-5 py-2 transform transition-transform duration-300 hover:translate-y-1`}>
+            <a href="#" className={`${styles.navLink} ${styles.effect5} text-${isDarkMode ? 'white' : 'black'} text-xl rounded-full px-5 py-2 transform transition-transform duration-300 hover:translate-y-1`}>
               <span className={styles.navSpan}>projects</span>
             </a>
-            <a href="#" className={`${styles.navLink} ${styles.effect7} text-${isDarkMode ? 'white' : 'gray-900'} text-xl rounded-full px-5 py-2 transform transition-transform duration-300 hover:translate-y-1`}>
+            <a href="#" className={`${styles.navLink} ${styles.effect7} text-${isDarkMode ? 'white' : 'black'} text-xl rounded-full px-5 py-2 transform transition-transform duration-300 hover:translate-y-1`}>
               <span className={styles.navSpan}>testimonials</span>
             </a>
           </div>
@@ -117,7 +117,7 @@ const Navbar = () => {
           {/* Mobile Menu */}
           <div className="sm:hidden lg:hidden">
             <svg 
-              className={`${styles.menuIcon} ${toggle ? 'active' : ''} text-${isDarkMode ? 'white' : 'gray-900'}`}
+              className={`${styles.menuIcon} ${toggle ? 'active' : ''} text-${isDarkMode ? 'white' : 'from-black'}`}
               viewBox="0 0 100 100"
               onClick={toggle ? closeMenu : openMenu}
             >
@@ -141,11 +141,11 @@ const Navbar = () => {
       {/* Mobile Menu Content */}
       <div className="flex justify-between ml-10">
         {toggle && (
-          <div className={`w-full p-4 ${isDarkMode ? 'bg-gray-800' : 'bg-gray-100'} rounded-lg shadow-lg`}>
+          <div className={`w-full p-4 ${isDarkMode ? 'bg-gray-800' : 'caret-black'} rounded-lg shadow-lg`}>
             <ul className="space-y-3">
-              <li className={`text-${isDarkMode ? 'white' : 'gray-900'} text-xl mb-2 cursor-pointer hover:pl-4 transition-all duration-300`}>skills</li>
-              <li className={`text-${isDarkMode ? 'white' : 'gray-900'} text-xl mb-2 cursor-pointer hover:pl-4 transition-all duration-300`}>projects</li>
-              <li className={`text-${isDarkMode ? 'white' : 'gray-900'} text-xl mb-2 cursor-pointer hover:pl-4 transition-all duration-300`}>testimonials</li>
+              <li className={`text-${isDarkMode ? 'white' : 'via-black'} text-xl mb-2 cursor-pointer hover:pl-4 transition-all duration-300`}>skills</li>
+              <li className={`text-${isDarkMode ? 'white' : 'via-black'} text-xl mb-2 cursor-pointer hover:pl-4 transition-all duration-300`}>projects</li>
+              <li className={`text-${isDarkMode ? 'white' : 'via-black'} text-xl mb-2 cursor-pointer hover:pl-4 transition-all duration-300`}>testimonials</li>
             </ul>
           </div>
         )}

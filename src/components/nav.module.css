@@ -13,7 +13,7 @@ body:after {
 h1 {
   margin: 0 0 50px;
   font-weight: normal;
-  color: #fff;
+  color: black;
   transition: all 0.3s ease;
 }
 
@@ -26,6 +26,7 @@ h2 {
   line-height: 24px;
   text-align: center;
   font-weight: normal;
+  color: black;
 }
 @media screen and (max-width: 768px) {
   h2 {

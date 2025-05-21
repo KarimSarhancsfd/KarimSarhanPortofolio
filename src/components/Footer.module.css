@@ -1,9 +1,11 @@
 .footer {
   z-index: 1;
-  --footer-background: #6A5ACD;
+  --footer-background: #51158C;
   display: grid;
   position: relative;
   min-height: 0rem;
+  border-radius: 20px;
+  background: var(--footer-background); /* Add this line */
 }
 
 .bubbles {

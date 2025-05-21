@@ -3,9 +3,9 @@ body {
     grid-template-rows: 1fr 10rem auto;
     grid-template-areas: "main" "." "footer";
     overflow-x: hidden;
-    background: #8686AC;
     min-height: 100vh;
     font-family: "Open Sans", sans-serif;
+    border-radius: 50px;
   }
   body .footer {
     z-index: 1;

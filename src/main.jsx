@@ -4,10 +4,12 @@ import App from './App.jsx'
 import './index.css'
 import { ThemeProvider } from './context/ThemeContext'
 
-createRoot(document.getElementById('root')).render(
+const root = createRoot(document.getElementById('root'));
+
+root.render(
   <StrictMode>
     <ThemeProvider>
       <App />
     </ThemeProvider>
-  </StrictMode>,
-)
+  </StrictMode>
+);

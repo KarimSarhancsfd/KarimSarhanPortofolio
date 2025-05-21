@@ -10,16 +10,16 @@ export default function Testimonial() {
   return (
     <div className={styles.carousel} mask='true'>
       <article>
-        <img src={t1} alt="John Doe" />
+        <img src={t1} alt="John Doe" loading="lazy" />
       </article>
       <article>
-        <img src={t2} alt="Jane Smith" />
+        <img src={t2} alt="Jane Smith" loading="lazy" />
       </article>
       <article>
-        <img src={t3} alt="Mike Johnson" />
+        <img src={t3} alt="Mike Johnson" loading="lazy" />
       </article>
       <article>
-        <img src={t4} alt="Sarah Williams" />
+        <img src={t4} alt="Sarah Williams" loading="lazy" />
       </article>
     </div>
   );
