@@ -28,9 +28,19 @@ const Background3d = () => {
     id: i,
     x: Math.random() * window.innerWidth,
     y: Math.random() * window.innerHeight,
-    size: Math.random() * 3,
-    twinkle: Math.random() * 2 + 1
+    size: Math.random() * 3 + 1,
+    dx: Math.random() * 0.8 + 0.2,
+    dy: Math.random() * 0.8 + 0.2,
+    speed: Math.random() * 40 + 20
   })), []);
+
+  // In the particle style:
+  // style={{
+  //   '--dx': particle.dx,
+  //   '--dy': particle.dy,
+  //   animationDuration: `${particle.speed}s`,
+  //   animationDelay: `${Math.random() * 15}s`
+  // }}
 
   return (
     <div className={styles.cosmicContainer}>
@@ -72,7 +82,11 @@ const Background3d = () => {
           style={{
             left: p.x,
             top: p.y,
+            '--dx': p.dx,
+            '--dy': p.dy,
             animation: `float ${p.duration}s ${p.delay}s infinite linear`,
+            animationDuration: `${p.speed}s`,
+            animationDelay: `${Math.random() * 15}s`,
             width: p.size,
             height: p.size,
             filter: `blur(${Math.round(p.size/8)}px)`
@@ -83,8 +97,8 @@ const Background3d = () => {
   );
 };
 
-const Background3dAlt = () => {
-  const particles = useMemo(() => Array.from({ length: 200 }, (_, i) => ({
+const Background3dalt = () => {
+  const baseParticles = useMemo(() => Array.from({ length: 200 }, (_, i) => ({
     id: i,
     x: Math.random() * window.innerWidth,
     y: Math.random() * window.innerHeight,
@@ -93,11 +107,21 @@ const Background3dAlt = () => {
     opacity: Math.random() * 0.7 + 0.3
   })), []);
 
+  const complexParticles = useMemo(() => Array.from({ length: 80 }, (_, i) => ({
+    id: i,
+    x: Math.random() * window.innerWidth,
+    y: Math.random() * window.innerHeight * 1.2,
+    size: Math.random() * 4 + 2,
+    speed: Math.random() * 0.15 + 0.05,
+    opacity: Math.random() * 0.5 + 0.2
+  })), []);
+
   return (
-    <div className={styles.spaceContainer}>
-      {particles.map(p => (
+    <div className={styles.cosmicContainer}>
+      {/* Base Star Layer */}
+      {baseParticles.map(p => (
         <div
-          key={`p-${p.id}`}
+          key={`base-${p.id}`}
           className={styles.starParticle}
           style={{
             left: p.x,
@@ -107,6 +131,26 @@ const Background3dAlt = () => {
             opacity: p.opacity,
             animation: `drift ${(1/p.speed)*20}s linear infinite`,
             animationDelay: `${Math.random() * 10}s`
+          }}
+        />
+      ))}
+
+      {/* Enhanced Star Layer */}
+      {complexParticles.map(p => (
+        <div
+          key={`enhanced-${p.id}`}
+          className={styles.starParticle}
+          style={{
+            left: p.x,
+            top: p.y,
+            width: `${p.size}px`,
+            height: `${p.size}px`,
+            opacity: p.opacity,
+            animation: `
+              float ${p.speed * 30}s linear infinite,
+              pulse ${Math.random() * 5 + 3}s ease-in-out infinite
+            `,
+            boxShadow: `0 0 ${p.size * 2}px rgba(255, 255, 255, ${p.opacity})`
           }}
         />
       ))}

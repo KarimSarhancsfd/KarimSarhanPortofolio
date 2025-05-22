@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './background.module.css';
+import Orb from './Orb';
 
 const COLORS = [
   '#4facfe', '#00f2fe', '#00cdac', 
@@ -18,6 +19,7 @@ const Background = () => {
   
   return (
     <div className={styles.background}>
+      
       {[...Array(100)].map((_, i) => {
         const size = Math.random() * 10 + 2;
         return (
@@ -39,6 +41,7 @@ const Background = () => {
           />
         );
       })}
+      <Orb />
     </div>
   );
 };
