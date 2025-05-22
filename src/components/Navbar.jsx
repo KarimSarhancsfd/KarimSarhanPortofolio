@@ -94,12 +94,6 @@ const Navbar = () => {
           <span className={styles.toggleFeature}></span>
         </label>
       </div>
-    
-  
-
-
-
-
         {/* Navigation Links */}
         <div>
           <div className="hidden sm:block lg:block">

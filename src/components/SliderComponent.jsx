@@ -7,6 +7,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 import styles from './SliderComponent.module.css';
+import Tilt from 'react-parallax-tilt';
 
 const slides = [
   {
@@ -157,3 +158,15 @@ const SliderComponent = () => {
 };
 
 export default SliderComponent;
+
+// Wrap your card component with:
+<Tilt
+  tiltMaxAngleX={8}
+  tiltMaxAngleY={8}
+  glareEnable={true}
+  glareMaxOpacity={0.2}
+  scale={1.02}
+  transitionSpeed={1500}
+>
+  {/* Your existing card content */}
+</Tilt>
