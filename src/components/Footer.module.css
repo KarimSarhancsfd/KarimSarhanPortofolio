@@ -5,7 +5,6 @@
   position: relative;
   min-height: 0rem;
   border-radius: 20px;
-  background: var(--footer-background); /* Add this line */
 }
 
 .bubbles {

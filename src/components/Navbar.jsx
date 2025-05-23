@@ -1,6 +1,8 @@
 import React, { useState, useContext,useEffect } from "react";
 
 import { CgNametag } from "react-icons/cg";
+import { TbWorld } from "react-icons/tb";
+import { MdOutlineLocalPhone } from "react-icons/md";
 
 import styles from './nav.module.css';
 import { ThemeContext } from '../context/ThemeContext';
@@ -72,10 +74,10 @@ const Navbar = () => {
 
         {/* Logo with 3D effect */}
         <div className="relative group">
-          <a href="#" className={`text-${isDarkMode ? 'white' : 'gray-900'} font-mono text-3xl tracking-wider flex items-center transform transition-transform duration-500 hover:scale-110 hover:rotate-3`}>
-            <CgNametag className="mr-2 transform transition-transform duration-500 group-hover:rotate-12" />
-            <span className="relative">
-              Karim
+          <a href="https://bluetags.me/lkcp21986520551" className={`text-${isDarkMode ? 'white' : 'gray-900'} font-mono text-3xl tracking-wider flex items-center transform transition-transform duration-500 hover:scale-110 hover:rotate-3`}>
+            <MdOutlineLocalPhone className="mr-2 transform transition-transform duration-500 group-hover:rotate-12" />
+            <span className="relative cursor-pointer">
+              ContactMe
               <span className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-600 opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-300"></span>
             </span>
           </a>

@@ -77,3 +77,13 @@ body {
     background-color: #0a0a1a;
     color: #e0e0ff;
 }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Match your navbar height */
+}
+
+body {
+  scroll-snap-type: y proximity;
+  overflow-anchor: none;
+}

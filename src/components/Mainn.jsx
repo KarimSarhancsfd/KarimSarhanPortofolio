@@ -9,7 +9,7 @@ import Testtimonial from './Testtimonial';
 import Footer from './Footer';
 import Background from './Background';
 import Background3d from './Background3d';
-import Orb from './Orb';
+
 import { ThemeContext } from '../context/ThemeContext';
 
 function Mainn() {

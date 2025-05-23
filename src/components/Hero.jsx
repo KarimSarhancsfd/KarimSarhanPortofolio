@@ -57,39 +57,84 @@ const Hero = () => {
             </a>
           </div>
           
-          {/* Icons - Mobile Layout */}
+          {/* Mobile Icons (shown only on mobile) */}
           <div className="lg:hidden flex justify-center mt-8 space-x-6">
-            <BsYoutube 
-              size={32}  
-              className="border-2 hover:border-indigo-800 hover:bg-indigo-800 hover:text-white rounded-full p-1 transition-all duration-300 ease-in-out"
-            />
-            <BsLinkedin 
-              size={32}
-              className="border-2 hover:border-indigo-800 hover:bg-indigo-800 hover:text-white rounded-full p-1 transition-all duration-300 ease-in-out"
-            />
-            <FaGithub 
-              size={32}
-              className="border-2 hover:border-indigo-800 hover:bg-indigo-800 hover:text-white rounded-full p-1 transition-all duration-300 ease-in-out"
-            />
+            <a 
+              href="https://www.youtube.com/@virusslayer"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:scale-110 active:scale-95 transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]"
+            >
+              <BsYoutube
+                size={32}
+                className="border-2 border-indigo-200 hover:border-indigo-800 hover:bg-indigo-800 hover:text-white rounded-full p-1.5 transition-all duration-300"
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/karim-sarhan-ceo-virusslayer"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:scale-110 active:scale-95 transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]"
+            >
+              <BsLinkedin
+                size={32}
+                className="border-2 border-indigo-200 hover:border-indigo-800 hover:bg-indigo-800 hover:text-white rounded-full p-1.5 transition-all duration-300"
+              />
+            </a>
+            <a
+              href="https://github.com/KarimSarhancsfd"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:scale-110 active:scale-95 transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]"
+            >
+              <FaGithub
+                size={32}
+                className="border-2 border-indigo-200 hover:border-indigo-800 hover:bg-indigo-800 hover:text-white rounded-full p-1.5 transition-all duration-300"
+              />
+            </a>
           </div>
 
-          {/* Icons - Desktop Layout */}
-          <div className="hidden lg:flex mt-8 space-x-4 cursor-pointer justify-center lg:justify-start">
-            <BsYoutube 
-              size={40}  
-              className="border-2 hover:border-indigo-800 hover:bg-indigo-800 hover:text-white rounded-full p-2 transition-all duration-300 ease-in-out"
-            />
-            <BsLinkedin 
-              size={40}
-              className="border-2 hover:border-indigo-800 hover:bg-indigo-800 hover:text-white rounded-full p-2 transition-all duration-300 ease-in-out"
-            />
-            <FaGithub 
-              size={40}
-              className="border-2 hover:border-indigo-800 hover:bg-indigo-800 hover:text-white rounded-full p-2 transition-all duration-300 ease-in-out"
-            />
+          {/* Desktop Icons (shown only on desktop) */}
+          <div className="hidden lg:flex mt-8 space-x-4 justify-center lg:justify-start">
+            <a
+              href="https://www.youtube.com/@virusslayer"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:scale-110 hover:-translate-y-1 active:scale-95 transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]"
+            >
+              <BsYoutube 
+                size={40}  
+                className="border-2 border-indigo-200 hover:border-indigo-800 hover:bg-indigo-800 hover:text-white rounded-full p-2 transition-all duration-300"
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/karim-sarhan-ceo-virusslayer"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:scale-110 hover:-translate-y-1 active:scale-95 transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]"
+            >
+              <BsLinkedin
+                size={40}
+                className="border-2 border-indigo-200 hover:border-indigo-800 hover:bg-indigo-800 hover:text-white rounded-full p-2 transition-all duration-300"
+              />
+            </a>
+            <a
+              href="https://github.com/KarimSarhancsfd"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:scale-110 hover:-translate-y-1 active:scale-95 transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]"
+            >
+              <FaGithub
+                size={40}
+                className="border-2 border-indigo-200 hover:border-indigo-800 hover:bg-indigo-800 hover:text-white rounded-full p-2 transition-all duration-300"
+              />
+            </a>
+          </div>
+
+   
           </div>
         </div>
-      </div>
+     
     </section>
   );
 };
