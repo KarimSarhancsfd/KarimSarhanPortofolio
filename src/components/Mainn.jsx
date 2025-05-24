@@ -5,7 +5,7 @@ import Hero from './Hero';
 import styles from './mainn.module.css';
 import SliderComponent from './SliderComponent';
 import Project from './Project';
-import Testtimonial from './Testtimonial';
+import Testtimonial from './Testimonial';
 import Footer from './Footer';
 import Background from './Background';
 import Background3d from './Background3d';

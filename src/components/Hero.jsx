@@ -140,5 +140,3 @@ const Hero = () => {
 };
 
 export default Hero;
-// Add missing alt attributes
-<img src={karim} alt="Karim Ahmed Ali portrait" className="w-full h-full object-cover" />

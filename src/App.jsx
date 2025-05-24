@@ -9,8 +9,6 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Testimonial from './components/Testimonial';
-
 function ScrollToTop() {
   const { pathname } = useLocation();
 
@@ -36,9 +34,3 @@ function App() {
 }
 
 export default App;
-
-// Update imports
-import Testimonial from './components/Testimonial';
-
-// Fix route paths
-<Route path="/testimonials" element={<SliderComponent />} />
