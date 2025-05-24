@@ -15,8 +15,8 @@ const Background3d = () => {
 
   const particles = useMemo(() => Array.from({ length: 60 }, (_, i) => ({
     id: i,
-    x: Math.random() * window.innerWidth,
-    y: Math.random() * window.innerHeight * 1.2,
+    x: Math.random() * 100 + '%',
+    y: Math.random() * 100 + '%',
     delay: Math.random() * 5,
     duration: Math.random() * 12 + 5,
     size: Math.random() * 15 + 5,
@@ -26,8 +26,8 @@ const Background3d = () => {
 
   const stars = useMemo(() => Array.from({ length: 150 }, (_, i) => ({
     id: i,
-    x: Math.random() * window.innerWidth,
-    y: Math.random() * window.innerHeight,
+    x: Math.random() * 100 + '%',
+    y: Math.random() * 100 + '%',
     size: Math.random() * 3 + 1,
     dx: Math.random() * 0.8 + 0.2,
     dy: Math.random() * 0.8 + 0.2,
@@ -159,3 +159,13 @@ const Background3dalt = () => {
 };
 
 export default Background3d;
+
+// Add resize handler
+useEffect(() => {
+  const handleResize = () => {
+    setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+  };
+  
+  window.addEventListener('resize', handleResize);
+  return () => window.removeEventListener('resize', handleResize);
+}, []);
