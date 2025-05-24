@@ -186,21 +186,11 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100dvh; /* Modern mobile-friendly unit */
+  width: 1000vw;
+  height: 1000vh;
+  z-index: -1;
   overflow: hidden;
-}
-
-@media (max-width: 768px) {
-  .particle {
-    max-width: 8px;
-    max-height: 8px;
-    animation-duration: 50s !important;
-  }
-  .star {
-    max-width: 2px;
-    max-height: 2px;
-  }
+  background: radial-gradient(ellipse at bottom, #1a1a3d 0%, #000000 100%);
 }
 
 /* Nebula Effect */

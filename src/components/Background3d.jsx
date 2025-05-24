@@ -13,6 +13,18 @@ const Background3d = () => {
     return () => window.removeEventListener('mousemove', handleMove);
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setViewport({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const particles = useMemo(() => Array.from({ length: 60 }, (_, i) => ({
     id: i,
     x: Math.random() * 100 + '%',
@@ -159,13 +171,3 @@ const Background3dalt = () => {
 };
 
 export default Background3d;
-
-// Add resize handler
-useEffect(() => {
-  const handleResize = () => {
-    setWindowSize({ width: window.innerWidth, height: window.innerHeight });
-  };
-  
-  window.addEventListener('resize', handleResize);
-  return () => window.removeEventListener('resize', handleResize);
-}, []);
