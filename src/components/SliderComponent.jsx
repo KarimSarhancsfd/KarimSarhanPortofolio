@@ -6,7 +6,11 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
+// Change this line:
 import styles from './SliderComponent.module.css';
+
+// To match actual file casing:
+import styles from './sliderComponent.module.css';
 import Tilt from 'react-parallax-tilt';
 
 const slides = [
