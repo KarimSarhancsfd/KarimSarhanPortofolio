@@ -1,12 +1,20 @@
-.footer {
+.footerContainer {
   z-index: 1;
   --footer-background: #51158C;
   display: grid;
   position: relative;
   min-height: 0rem;
   border-radius: 20px;
+  transition: background-color 0.3s ease;
 }
 
+.dark {
+  --footer-background: #B07C92;
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+/* Keep your original light mode styles */
 .bubbles {
   position: absolute;
   top: 0;
