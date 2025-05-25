@@ -23,9 +23,6 @@ function App() {
   const { isDarkMode } = useContext(ThemeContext);
 
   return (
-    // <div className={`min-h-screen ${isDarkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
-      
-    // </div>
 
     <div>
       <Mainn />
