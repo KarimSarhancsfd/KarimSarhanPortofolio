@@ -28,9 +28,18 @@
   position: absolute;
   right: 0;
   top: 0;
+<<<<<<< HEAD
   bottom: 0;
   z-index: 2;
   animation: moveBackground 70s linear infinite;
+=======
+  left: 0;
+  width: 1000vw;
+  height: 1000vh;
+  z-index: -1;
+  overflow: hidden;
+  background: radial-gradient(ellipse at bottom, #1a1a3d 0%, #000000 100%);
+>>>>>>> fdcebf625406e2719483dd31bfadb2a76d151a54
 }
 
 .clouds {

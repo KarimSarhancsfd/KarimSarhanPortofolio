@@ -10,9 +10,9 @@
 
 .dark {
   --footer-background: #B07C92;
-  background-color: #1a1a1a;
-  color: #ffffff;
+  
 }
+
 
 /* Keep your original light mode styles */
 .bubbles {

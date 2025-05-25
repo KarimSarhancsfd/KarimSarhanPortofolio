@@ -4,7 +4,7 @@ import t1 from '../assets/test1.png';
 import t2 from '../assets/test2.png';
 import t3 from '../assets/test3.png';
 import t4 from '../assets/test4.png';
-import styles from './Testtimonial.module.css';
+import styles from './testimonial.module.css';
 
 export default function Testimonial() {
   return (
