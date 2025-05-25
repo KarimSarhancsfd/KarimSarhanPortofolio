@@ -1,0 +1,47 @@
+.sunAndStars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.sun {
+  position: absolute;
+  width: 20em;
+  height: 20em;
+  top: -10em;
+  left: -10em;
+  background: #fff;
+  border-radius: 50%;
+  animation: flow 10s infinite alternate;
+  z-index: 1;
+  box-shadow: 0 0 50px #fffc01, 0 0 150px #ffad01;
+}
+
+.star {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+@keyframes flow {
+  0% {
+    box-shadow: 0 0 50px #fffc01, 0 0 150px #ffad01;
+  }
+  25% {
+    box-shadow: 0 0 50px #fffc01, 0 0 200px #ffad01;
+  }
+  50% {
+    box-shadow: 0 0 100px #fffc01, 0 0 300px #ffad01;
+  }
+  75% {
+    box-shadow: 0 0 50px #fffc01, 0 0 200px #ffad01;
+  }
+  100% {
+    box-shadow: 0 0 20px #fffc01, 0 0 150px #ffad01;
+  }
+}
