@@ -30,7 +30,7 @@ const Background = () => {
   return (
     <div className={styles.background}>
       <SunAndStars />
-      {[...Array(100)].map((_, i) => {
+      {[...Array(40)].map((_, i) => {
         const size = Math.random() * 10 + 2;
         return (
           <div

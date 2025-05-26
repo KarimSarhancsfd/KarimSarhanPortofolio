@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import styles from "./sunAndStars.module.css";
+import SunParticles from "./SunParticles"; // Import SunParticles component
 
 const STAR_COUNT = 200;
 
@@ -21,7 +22,10 @@ const SunAndStars = () => {
 
   return (
     <div className={styles.sunAndStars}>
+      <SunParticles   />
+      {/* Render SunParticles component */}
       <div className={styles.sun} />
+       
       {Array.from({ length: STAR_COUNT }).map((_, i) => (
         <div
           key={i}
@@ -29,6 +33,7 @@ const SunAndStars = () => {
           className={styles.star}
         />
       ))}
+      
     </div>
   );
 };

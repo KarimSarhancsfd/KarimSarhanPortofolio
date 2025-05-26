@@ -1,7 +1,7 @@
 // ... existing code ...
 module.exports = {
   content: [
-    // ... existing paths ...
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
   safelist: [
     'text-white',

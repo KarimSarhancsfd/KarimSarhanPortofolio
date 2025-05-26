@@ -53,3 +53,7 @@
       rotate(10deg);
   }
 }
+
+.particle, .orb, .orbContainer, .star, .sun {
+  will-change: transform, opacity;
+}

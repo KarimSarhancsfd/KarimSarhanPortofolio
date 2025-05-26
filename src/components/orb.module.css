@@ -1,18 +1,14 @@
 .orbContainer {
-  position: absolute;
-  top: 90%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: fixed;
+  left: 1vw;
+  bottom: 2vw;
+  transform: none;
   z-index: 1;
 }
 
 .orb {
- --c1: oklch(44.4% 0.177 26.899);
-    --c2: oklch(85.2% 0.199 91.936);
-    --c3: oklch(58.8% 0.158 241.966);
-  
-  width: min(80vmin, 300px);
-  height: min(80vmin, 300px);
+  width: min(80vmin, 90px);
+  height: min(80vmin, 90px);
   border-radius: 50%;
   display: grid;
   grid-template-areas: "stack";
@@ -40,28 +36,36 @@
     var(--c1)
   );
   filter: blur(60px) contrast(2);
-  animation: 
-    rotate 30s linear infinite,
-    pulse 8s ease-in-out infinite;
+  animation: rotate 5s linear infinite, pulse 8s ease-in-out infinite;
 }
 
 .orb::after {
-  background: radial-gradient(circle at 70% 30%, 
+  background: radial-gradient(
+    circle at 70% 30%,
     rgba(255, 255, 255, 0.3) 0%,
     transparent 60%
   );
-  backdrop-filter: blur(20px) contrast(1.5);
+  backdrop-filter: blur(500px) contrast(1.5);
   animation: glow 4s alternate infinite;
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 @keyframes glow {
-  from { opacity: 0.4; }
-  to { opacity: 0.8; }
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 0.8;
+  }
 }
 
 @keyframes rotate {
@@ -78,61 +82,41 @@
   }
 }
 @supports (background: conic-gradient(from 0deg, red, blue)) {
-    @property --angle {
-      syntax: "<angle>";
-      inherits: false;
-      initial-value: 0deg;
-    }
+  @property --angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
   }
-  
-  /* .orb {
-    --c1: oklch(44.4% 0.177 26.899);
-    --c2: oklch(85.2% 0.199 91.936);
-    --c3: oklch(58.8% 0.158 241.966);
-    display: grid;
-    grid-template-areas: "stack";
-    width: min(80vmin, 100%);
-    aspect-ratio: 1;
-    overflow: hidden;
-    border-radius: 50%;
-    opacity: 0.9;
-    mix-blend-mode: soft-light;
-} */
-  
-  .orb::before,
-  .orb::after {
-    content: "";
-    grid-area: stack;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    transform: translateZ(0);
+}
+
+.orb {
+  --c1: oklch(85% 0.15 250);
+  --c2: oklch(95% 0.1 280);
+  --c3: oklch(90% 0.12 220);
+  opacity: 0.8;
+  mix-blend-mode: soft-light;
+}
+
+.orb::before {
+  filter: blur(2vmin) contrast(3);
+  animation: rotate 40s linear infinite;
+}
+
+.orb::after {
+  --dot: 1.5px;
+  background-image: radial-gradient(
+    circle at center,
+    var(--bg) var(--dot),
+    transparent var(--dot)
+  );
+  background-size: calc(var(--dot) * 2) calc(var(--dot) * 2);
+  mask-image: radial-gradient(black 25%, transparent 75%);
+  backdrop-filter: blur(8vmin) contrast(10);
+  mix-blend-mode: overlay;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
   }
-  
-  .orb {
-    --c1: oklch(85% 0.15 250);
-    --c2: oklch(95% 0.1 280);
-    --c3: oklch(90% 0.12 220);
-    opacity: 0.8;
-    mix-blend-mode: soft-light;
-  }
-  
-  .orb::before {
-    filter: blur(2vmin) contrast(3);
-    animation: rotate 40s linear infinite;
-  }
-  
-  .orb::after {
-    --dot: 1.5px;
-    background-image: radial-gradient(circle at center, var(--bg) var(--dot), transparent var(--dot));
-    background-size: calc(var(--dot) * 2) calc(var(--dot) * 2);
-    mask-image: radial-gradient(black 25%, transparent 75%);
-    backdrop-filter: blur(8vmin) contrast(10);
-    mix-blend-mode: overlay;
-  }
-  
-  @keyframes rotate {
-    to {
-      --angle: 360deg;
-    }
-  }
+}
