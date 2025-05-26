@@ -23,11 +23,6 @@ function Mainn() {
   return (
     <div className={`${isDarkMode ? 'bg-gray-800' : 'bg-indigo-200'} rounded-2xl relative min-h-screen`}>
       {isDarkMode ? <Background3d /> : <Background />}
-      
-    
-       
-    
-
       <div className={styles.triangleContainer}>
         {/* Left side triangles */}
         {[...Array(10)].map((_, i) => (
@@ -41,8 +36,6 @@ function Mainn() {
           />
         ))}
         
-        
-
  
       {/* Existing bubbles */}
       <div className={styles.bubbles}>
