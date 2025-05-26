@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./background.module.css";
 import Orb from "./Orb";
+import Orb2 from "./Orb2";
 import SunAndStars from "./SunAndStars";
 
 const COLORS = [
@@ -51,6 +52,7 @@ const Background = () => {
         );
       })}
       <Orb />
+      <Orb2 />
     </div>
   );
 };

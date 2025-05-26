@@ -1,15 +1,15 @@
 .orbContainer {
   position: absolute;
-  top: 50%;
+  top: 90%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
 }
 
 .orb {
-  --c1: oklch(90% 0.15 250 / 0.6);
-  --c2: oklch(95% 0.1 280 / 0.4);
-  --c3: oklch(85% 0.12 220 / 0.5);
+ --c1: oklch(44.4% 0.177 26.899);
+    --c2: oklch(85.2% 0.199 91.936);
+    --c3: oklch(58.8% 0.158 241.966);
   
   width: min(80vmin, 300px);
   height: min(80vmin, 300px);
